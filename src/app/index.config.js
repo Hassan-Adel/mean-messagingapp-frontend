@@ -11,6 +11,6 @@ export function config ($logProvider, toastrConfig, $authProvider, API_URL) {
   toastrConfig.progressBar = true;
 
   //Setting up satellite endpoints
-  $authProvider.signupUrl = API_URL = 'authentication/register';
+  $authProvider.signupUrl = API_URL + '/authentication/register';
 
 }
