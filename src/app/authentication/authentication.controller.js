@@ -1,18 +1,10 @@
 export class AuthenticationController {
-    constructor($http) {
+    constructor($auth) {
         'ngInject';
-        this.$http = $http;
-        this.getMessages();
+        this.$auth = $auth;
     }
 
-    getMessages(){
-        var vm = this;
-        this.$http.get('http://localhost:5000/api/message').then(function(result){
-            vm.messages = result.data;
-        });
-    }
-
-    postMessage() {
-        this.$http.post('http://localhost:5000/api/message',{msg: this.message});
-    }
+register(){
+    this.$auth.signup({email:'h@gmaiol.cdd'})
+}
 }
